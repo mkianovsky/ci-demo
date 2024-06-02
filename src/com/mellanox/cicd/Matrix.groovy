@@ -712,6 +712,7 @@ def parseListV(volumes) {
     volumes.each { vol ->
         hostPath = vol.get("hostPath")
         mountPath = vol.get("mountPath")
+        type = vol.get("type", "")  // Get 'type' or default to empty string
         hpv = hostPathVolume(hostPath: hostPath, mountPath: mountPath)
         listV.add(hpv)
     }
