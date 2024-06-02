@@ -726,10 +726,12 @@ def parseListNfsV(volumes) {
         serverPath = vol.get("serverPath")
         mountPath = vol.get("mountPath")
         readOnly = vol.get("readOnly", false)
+        type = vol.get("type", "")  // Get 'type' or default to empty string
         nfsv = nfsVolume(serverAddress: serverAddress,
                          serverPath: serverPath,
                          mountPath: mountPath,
-                         readOnly: readOnly)
+                         readOnly: readOnly,
+                         type: type)
         listV.add(nfsv)
     }
     return listV
